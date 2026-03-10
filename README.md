@@ -1,144 +1,151 @@
-# OpenClaw Mac Install Guide
+# OpenClaw Mac 安装指南
 
-Install, verify, and configure OpenClaw on your Mac using the graphical installer—no command-line experience required.
-
-*[中文版](README-MAC.md)*
+一款安全、便捷的 OpenClaw 图形化安装器，在 Mac 上完成安装、验证与模型配置，无需命令行基础即可使用。
 
 ---
 
-## System requirements
+## 下载安装包
 
-- **macOS**: 10.13 or later (Intel and Apple Silicon)
-- **Network**: Keep a stable connection during install and configuration
-- **Sandbox (optional)**: For “Safe” or “Daily” run modes, install and start [Docker Desktop](https://www.docker.com/products/docker-desktop/) first
+**通过网盘分享的文件：OpenClaw-Installer-1.2.0-macOS.dmg**
 
----
+- **链接**：https://pan.baidu.com/s/1zf3e9RY-gW2N5UHBb3PXQA?pwd=245r  
+- **提取码**：245r  
 
-## Download the installer
-
-Get the **macOS installer** (DMG) from one of the links below. Open the DMG and drag “OpenClaw Installer” into **Applications**.
-
-- **GitHub Releases**: [OpenClaw Installer Releases](https://github.com/openclaw-ai/openclaw/releases) (choose the DMG labeled `macOS` or `Installer`)
-- **Official install page**: [openclaw.ai](https://openclaw.ai) or [Install overview](https://docs.openclaw.ai/install)
+复制这段内容后打开百度网盘手机 App，操作更方便哦。
 
 ---
 
-## Install steps overview
+## 其他下载渠道
 
-The installer has **5 steps**: Welcome → Install → Verify → Region & Model → Finish. Each step is described below with a screenshot.
+- **GitHub Releases**：[OpenClaw Installer Releases](https://github.com/openclaw-ai/openclaw/releases)（选择带 `macOS` 或 `Installer` 的 DMG）
+- **官方安装页**：[openclaw.ai](https://openclaw.ai) 或 [安装总览](https://docs.openclaw.ai/install)
 
----
-
-### Step 1 of 5: Welcome — Choose install method
-
-On the welcome screen, pick one install method:
-
-| Option | Description |
-|--------|-------------|
-| **macOS one-click install (recommended)** | Uses the official script to install Node 22+ and OpenClaw CLI automatically; no Homebrew required. |
-| **Build from source** | Clone the repo and build with pnpm. For developers or contributors. |
-
-After choosing “macOS one-click install”, click **“Install via official script”** to continue.
-
-![Step 1: Welcome — Choose install method](snapshots/00-welcome.png)
+安装包为 DMG 格式，双击打开后将「OpenClaw 安装器」拖入「应用程序」即可。
 
 ---
 
-### Step 2 of 5: Install — Run the install script
+## 系统要求
 
-This step runs:
-
-1. **Environment check**: Detects Node.js and OpenClaw (if already installed).
-2. **Install OpenClaw**: Uses npm when Node 22+ is present; otherwise uses a self-contained script (no Homebrew).
-3. **Done**: Proceeds to “Verify”; Gateway can be configured later in “Region & Model”.
-
-Keep your network connected; the first install usually takes a few minutes. Click **“Start install”**, then wait for the log to show completion.
-
-![Step 2: Install](snapshots/01-install.png)
+- **系统**：macOS 10.13 及以上（支持 Intel 与 Apple Silicon）
+- **网络**：安装与配置过程需保持网络畅通
+- **沙箱（可选）**：若使用「安全体验」或「日常使用」运行方式，需先安装并启动 [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 ---
 
-### Step 3 of 5: Verify — Confirm install
+## 安装步骤概览
 
-The verify step checks that OpenClaw is installed and working:
-
-- Click **“Check if installation is normal”**: Runs the doctor command and shows the output.
-- Optionally **“View running status”**: Shows current service status.
-
-If there are no errors, click **“Next: Region & Model”** to go to configuration.
-
-![Step 3: Verify](snapshots/02-verify.png)
+安装器共 **5 步**：欢迎 → 安装 → 验证 → 区域与模型 → 安装完成。以下为每步说明与界面截图。
 
 ---
 
-### Step 4 of 5: Region & Model — Choose region, model, and API Key
+### 步骤 1／5：欢迎 — 选择安装方式
 
-You must complete this step before you can start a conversation:
+打开安装器后，在欢迎页选择一种安装方式：
 
-1. **Region**: **China** or **International**.
-2. **Recommended model**: Pick a token-efficient model (e.g. Qwen Turbo, Doubao Lite); each card has a short note (e.g. free tier, use case).
-3. **API Key**: Paste the model’s API Key in the field (use “Open Key creation page” to get one).
-4. **Test and save**: Optionally click **“Test connection”**, then **“Save and start conversation”** to apply.
+| 选项 | 说明 |
+|------|------|
+| **macOS 一键安装（推荐）** | 通过官方脚本自动安装 Node 22+ 和 OpenClaw CLI，无需事先安装 Homebrew。 |
+| **从源码构建** | 克隆仓库并用 pnpm 构建，适合开发者或希望参与贡献的用户。 |
 
-Run mode (direct / sandbox) is under the **“Full configuration”** tab; default is “Direct run” and does not need Docker.
+选择「macOS 一键安装」后，点击 **「使用官方脚本安装」** 进入下一步。
 
-![Step 4: Region & Model](snapshots/03-config.png)
-
----
-
-### Step 5 of 5: Finish — Open conversation or try tutorials
-
-After configuration you see the finish page:
-
-- **Open conversation**: Click the main button **“Open conversation and start”**. The installer starts the connection service and opens the browser.
-- **Tutorials**: The page lists “Getting started (10 classic cases)”. After opening the conversation UI, click any case for steps and example prompts.
-
-We recommend doing “1. First message” before the others.
-
-![Step 5: Finish](snapshots/04-finish.png)
+![步骤 1：欢迎 — 选择安装方式](snapshots/00-welcome.png)
 
 ---
 
-### Tutorial popup example
+### 步骤 2／5：安装 — 执行安装脚本
 
-Clicking a tutorial case opens a popup with **goal**, **steps**, and **example prompt**. Use “Copy example prompt” in the conversation, or “Open conversation and start” to begin.
+本页会依次执行：
 
-![Tutorial popup](snapshots/05-tutorial-modal.png)
+1. **检测环境**：检查是否已安装 Node.js 与 OpenClaw  
+2. **安装 OpenClaw**：已有 Node 22+ 时用 npm 安装；否则使用自包含脚本（无需 Homebrew）  
+3. **完成**：安装结束后进入「验证」步骤；Gateway 可在后续「区域与模型」中配置  
 
----
+请保持网络畅通，首次安装通常需要数分钟。点击 **「开始安装」**，等待日志中的安装完成提示即可。
 
-## After install
-
-| Need | Action |
-|------|--------|
-| **Change model or region** | Menu **“Region & model config”**, or on the finish page “Configure model & region” → choose model, enter Key → **“Apply config”**. |
-| **Update OpenClaw** | Menu **“Management console”** → **“Update OpenClaw”**. |
-| **View / start / stop connection service** | Finish page shows Gateway status; use the management console to start, stop, or restart. |
-| **Uninstall** | Menu **“Uninstall OpenClaw”** and follow the prompts. |
-
-See also [Updating OpenClaw and config](docs/UPDATING-OPENCLAW-AND-CONFIG.md).
+![步骤 2：安装](snapshots/01-install.png)
 
 ---
 
-## FAQ
+### 步骤 3／5：验证 — 确认安装正常
 
-- **Connection service not running**: On the finish page click “Start connection service”, or run in Terminal: `openclaw gateway --port 18789`.
-- **Docker not installed or not running**: If you chose sandbox mode, install and start Docker Desktop (Launchpad → Docker). Then on the config page click “Retry apply config”, or switch to “Direct run” and apply again.
-- **API Key verification failed**: Ensure the Key is complete (no extra spaces), not expired, and matches the selected provider. For Doubao/Volcengine, enable the model in the [Ark console](https://console.volcengine.com/ark/region:ark+cn-beijing).
-- **Doubao 404**: If Ark only has 1.5 and the installer uses Seed 2.0 by default, enable Seed 2.0 in the Ark console or pick another enabled model.
+验证页用于确认 OpenClaw 已正确安装并可运行：
 
----
+- 点击 **「检查安装是否正常」**：运行诊断命令（doctor），查看输出是否正常。  
+- 可选 **「查看运行状态」**：查看当前服务状态。  
 
-## Privacy and data
+确认无报错后，点击 **「下一步：区域与模型」** 进入配置。
 
-- **Conversations and config stay on your machine**; they are not uploaded to the cloud.
-- **API Keys** are stored only in your local OpenClaw config directory (e.g. `~/.openclaw`) and used only by this app.
+![步骤 3：验证](snapshots/02-verify.png)
 
 ---
 
-## More docs
+### 步骤 4／5：区域与模型 — 选区域、模型并填写 API Key
 
-- [Install overview](https://docs.openclaw.ai/install)
-- [Quick start](https://docs.openclaw.ai/start/getting-started)
-- [Sandbox](https://docs.openclaw.ai/gateway/sandboxing)
-- [Model providers and API keys](https://docs.openclaw.ai/providers/models)
+在此步完成**必选配置**后才能开始对话：
+
+1. **选择区域**：**中国** 或 **国际**。  
+2. **选择推荐模型**：如「通义 Turbo」「豆包 Lite」等省 token 模型；每个模型卡片下有简短说明（如免费额度、适用场景）。  
+3. **填写 API Key**：在输入框中粘贴对应模型的 API Key（可从下方「打开 Key 创建页面」跳转获取）。  
+4. **测试与保存**：可先点 **「测试连接」** 验证 Key；再点 **「保存并开始对话」** 应用配置。  
+
+运行方式（直接运行 / 沙箱）在 **「完整配置」** 选项卡中可选；默认「直接运行」无需 Docker。
+
+![步骤 4：区域与模型](snapshots/03-config.png)
+
+---
+
+### 步骤 5／5：安装完成 — 打开对话或入门教程
+
+配置完成后会进入「安装完成」页：
+
+- **打开对话界面**：点击主按钮 **「打开对话界面开始」**，安装器会先启动连接服务再打开浏览器。  
+- **入门教程**：页面上有「入门教程（10 个经典案例）」；打开对话界面后，可点击任意案例查看步骤与示例提示，在对话中跟着做即可。  
+
+推荐先完成「1. 第一句对话」再尝试其他案例。
+
+![步骤 5：安装完成](snapshots/04-finish.png)
+
+---
+
+### 入门教程弹窗示例
+
+点击某个入门案例后，会弹出该案例的详细说明：**目标**、**步骤**、**示例提示**。可「复制示例提示」到对话中使用，或直接「打开对话界面开始」。
+
+![入门教程弹窗](snapshots/05-tutorial-modal.png)
+
+---
+
+## 安装后常用操作
+
+| 需求 | 操作 |
+|------|------|
+| **更换模型或区域** | 菜单 **「区域与模型配置」**，或完成页的「配置模型与区域」→ 选择新模型、填写 Key → **「应用配置」**。 |
+| **更新 OpenClaw 版本** | 菜单 **「管理控制台」** → **「更新 OpenClaw」**。 |
+| **查看/启动/停止连接服务** | 完成页会显示 Gateway 状态；可在管理控制台中启动、停止或重启。 |
+| **卸载** | 菜单 **「卸载 OpenClaw」**，按提示完成卸载。 |
+
+---
+
+## 常见问题
+
+- **连接服务未运行**：在完成页点击「启动连接服务」，或终端执行：`openclaw gateway --port 18789`。  
+- **Docker 未安装 / 未启动**：若选择了沙箱模式，需先安装并启动 Docker Desktop（启动台 → Docker）。启动后再在配置页点击「重试应用配置」；若暂不使用沙箱，可改为「直接运行」后重新应用配置。  
+- **API Key 验证失败**：请确认 Key 完整无多余空格、未过期，且与所选模型提供商一致；豆包需在 [火山方舟控制台](https://console.volcengine.com/ark/region:ark+cn-beijing) 开通对应模型。  
+- **豆包报 404**：若方舟仅开通 1.5 而安装器默认使用 Seed 2.0，请在方舟控制台开通 Seed 2.0 或改用其他已开通模型。
+
+---
+
+## 隐私与数据
+
+- **对话与配置仅保存在本机**，不上传云端。  
+- **API Key** 仅保存在您电脑的 OpenClaw 配置目录（如 `~/.openclaw`），仅本程序使用。
+
+---
+
+## 更多文档
+
+- [安装总览](https://docs.openclaw.ai/install)  
+- [快速开始](https://docs.openclaw.ai/start/getting-started)  
+- [Sandbox 沙箱](https://docs.openclaw.ai/gateway/sandboxing)  
+- [模型提供商与 Key 获取](https://docs.openclaw.ai/providers/models)
