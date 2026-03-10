@@ -1,4 +1,4 @@
-# OpenClaw UI Installer Mac Installation Guide
+# OpenClaw Mac Install Guide
 
 Install, verify, and configure OpenClaw on your Mac using the graphical installer—no command-line experience required.
 
@@ -142,4 +142,3 @@ See also [Updating OpenClaw and config](docs/UPDATING-OPENCLAW-AND-CONFIG.md).
 - [Quick start](https://docs.openclaw.ai/start/getting-started)
 - [Sandbox](https://docs.openclaw.ai/gateway/sandboxing)
 - [Model providers and API keys](https://docs.openclaw.ai/providers/models)
-
